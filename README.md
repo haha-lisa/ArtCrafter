@@ -1,7 +1,3 @@
-# 
-Style transfer, text guidance, diffusion model
-This is the official PyTorch implementation of the paper ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing
-
 <div align="center">
 <h1>ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing</h1>
 
@@ -11,7 +7,7 @@ Tsinghua University, Pengcheng Laboratory, Lenovo, National Cheng Kung Universit
 
 <sup>*</sup>corresponding authors
 
-<a href='https://arxiv.org/abs/2501.02064'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
+<a href='https://arxiv.org/abs/2501.02064'><img src='https://img.shields.io/badge/Arxiv-Paper-red'></a>
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-red)](https://huggingface.co/lisalisalisa/artcrafter)
 [![GitHub](https://img.shields.io/github/stars/haha-lisa/ArtCrafter?style=social)](https://github.com/haha-lisa/ArtCrafter)
 
