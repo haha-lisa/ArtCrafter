@@ -6,8 +6,8 @@ from adapter import IPAdapterPlus
 
 base_model_path = "SG161222/Realistic_Vision_V4.0_noVAE"
 vae_model_path = "stabilityai/sd-vae-ft-mse"
-image_encoder_path = "/data1/hns/2024code/zest_code/models/image_encoder"
-ip_ckpt = "/data1/hns/trained_model/20241024/20241024-15plus-10000.bin"
+image_encoder_path = ".../models/image_encoder"
+ip_ckpt = ".../ip_ckpt.bin"
 device = "cuda"
 
 def parse_args():
@@ -16,7 +16,6 @@ def parse_args():
     parser.add_argument('--prompt', type=str, required=True, help='Prompt for image generation')
     parser.add_argument('--save_path', type=str, required=True, help='Path to save the generated images')
     parser.add_argument('--scale', type=float, default=0.8, help='Scaling factor for image generation')
-    # parser.add_argument('--ip_ckpt', type=str, required=True, help='Path to the IPAdapterPlus checkpoint')
     return parser.parse_args()
 
 def save_image(image, path):
