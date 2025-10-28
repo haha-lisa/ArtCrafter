@@ -28,7 +28,6 @@ mv IP-Adapter/models models
 
 ## Usage
 ```python
-# 导入必要的库
 import torch
 from diffusers import StableDiffusionPipeline, DDIMScheduler, AutoencoderKL
 from PIL import Image
