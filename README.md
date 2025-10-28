@@ -10,3 +10,91 @@ Recent years have witnessed significant advancements in text-guided style transf
 
 ## Framework
 ![MAIN3_e2-min](https://github.com/haha-lisa/ArtCrafter/blob/main/images/3pipeline_00.png)
+
+## Install dependencies
+
+Follow [IP-Adapter](https://github.com/tencent-ailab/IP-Adapter?tab=readme-ov-file#download-models) to download pre-trained checkpoints from [here](https://huggingface.co/h94/IP-Adapter).
+
+```
+git clone https://github.com/haha-lisa/ArtCrafter.git
+cd ArtCrafter
+
+# download the models
+git lfs install
+git clone https://huggingface.co/h94/IP-Adapter
+mv IP-Adapter/models models
+```
+
+
+## Usage
+```python
+# 导入必要的库
+import torch
+from diffusers import StableDiffusionPipeline, DDIMScheduler, AutoencoderKL
+from PIL import Image
+from adapter import IPAdapterPlus
+
+
+base_model_path = "SG161222/Realistic_Vision_V4.0_noVAE"
+vae_model_path = "stabilityai/sd-vae-ft-mse"
+image_encoder_path = ".../models/image_encoder"
+ip_ckpt = ".../ip_ckpt.bin"
+device = "cuda"
+
+
+def save_image(image, path):
+    image.save(path)
+
+
+def main(image_path, prompt, save_path, scale=0.8):
+    noise_scheduler = DDIMScheduler(
+        num_train_timesteps=1000,
+        beta_start=0.00085,
+        beta_end=0.012,
+        beta_schedule="scaled_linear",
+        clip_sample=False,
+        set_alpha_to_one=False,
+        steps_offset=1,
+    )
+    vae = AutoencoderKL.from_pretrained(vae_model_path).to(dtype=torch.float16)
+
+    pipe = StableDiffusionPipeline.from_pretrained(
+        base_model_path,
+        torch_dtype=torch.float16,
+        scheduler=noise_scheduler,
+        vae=vae,
+        feature_extractor=None,
+        safety_checker=None
+    )
+
+    ip_model = IPAdapterPlus(pipe, image_encoder_path, ip_ckpt, device, num_tokens=16)
+
+    image = Image.open(image_path)
+    image = image.resize((512, 512))
+
+    images = ip_model.generate(
+        pil_image=image,
+        num_samples=10,
+        num_inference_steps=50,
+        seed=42,
+        prompt=prompt,
+        scale=scale  
+    )
+
+    save_image(image, f"{save_path}_input_with_prompt.png")
+
+
+    for i, img in enumerate(images):
+        save_image(img, f"{save_path}_result_{i+1}.png")
+
+    with open(f"{save_path}_prompt.txt", 'w') as f:
+        f.write(prompt)
+
+if __name__ == "__main__":
+    image_path = "path/to/your/input/image.jpg" 
+    prompt = "Your prompt here"  
+    save_path = "path/to/save/results"  
+    scale = 0.8  
+
+    main(image_path, prompt, save_path, scale)
+```
