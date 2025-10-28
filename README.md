@@ -23,6 +23,11 @@ cd ArtCrafter
 git lfs install
 git clone https://huggingface.co/h94/IP-Adapter
 mv IP-Adapter/models models
+
+# download the ckpt.bin
+https://drive.google.com/file/d/1QAG2gWZ2NFKyJx6ZhcpQNhYyLM9ABWQr/view?usp=sharing
+or
+https://huggingface.co/lisalisalisa/artcrafter/blob/main/ckpt.bin
 ```
 
 
@@ -36,8 +41,8 @@ from adapter import IPAdapterPlus
 
 base_model_path = "SG161222/Realistic_Vision_V4.0_noVAE"
 vae_model_path = "stabilityai/sd-vae-ft-mse"
-image_encoder_path = ".../models/image_encoder"
-ip_ckpt = ".../ip_ckpt.bin"
+image_encoder_path = "models/image_encoder"
+ip_ckpt = "ckpt.bin"
 device = "cuda"
 
 
@@ -90,10 +95,15 @@ def main(image_path, prompt, save_path, scale=0.8):
         f.write(prompt)
 
 if __name__ == "__main__":
-    image_path = "path/to/your/input/image.jpg" 
-    prompt = "Your prompt here"  
-    save_path = "path/to/save/results"  
+    image_path = "path/to/your/input/image.jpg"  # "assets/1.jpg"
+    prompt = "Your prompt here"  # "Cat"
+    save_path = "path/to/save/results"  # "result.png"
     scale = 0.8  
 
     main(image_path, prompt, save_path, scale)
+```
+
+For quick command
+```python
+python main.py --image_path "assets/1.jpg" --prompt "Cat" --save_path "result.png"
 ```
