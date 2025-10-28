@@ -1,6 +1,22 @@
-# ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing
+# 
 Style transfer, text guidance, diffusion model
 This is the official PyTorch implementation of the paper ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing
+
+<div align="center">
+<h1>ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing</h1>
+
+[**Nisha Huang**](https://scholar.google.com/citations?user=wTmPkSsAAAAJ&hl=en) · [**Kaer Huang**](https://carlhuangnuc.github.io/) · [**Yifan Pu**](https://scholar.google.com/citations?user=oM9rnYQAAAAJ&hl=en&authuser=2) · [**Jiangshan Wang**](https://github.com/wangjiangshan0725) · [**Jie Guo**](https://scholar.google.com.hk/citations?user=hqLytuEAAAAJ&hl=zh-CN) · [**Yiqiang Yan**](https://scholar.google.com/citations?user=p6q5mOkAAAAJ&hl=en)· [**Xiu Li**](https://scholar.google.com/citations?user=Xrh1OIUAAAAJ)<sup>*</sup>· [**Tong-Yee Lee**](http://graphics.csie.ncku.edu.tw/Tony/tony.htm)
+
+Tsinghua University, Pengcheng Laboratory, Lenovo, National Cheng Kung University
+
+<sup>*</sup>corresponding authors
+
+<a href='https://arxiv.org/abs/2501.02064'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Space-red)](https://huggingface.co/lisalisalisa/artcrafter)
+[![GitHub](https://img.shields.io/github/stars/haha-lisa/ArtCrafter?style=social)](https://github.com/haha-lisa/ArtCrafter)
+
+</div>
+
 
 ## Results
 ![MAIN3_e2-min](https://github.com/haha-lisa/ArtCrafter/blob/main/images/teaser.png)
@@ -106,4 +122,18 @@ if __name__ == "__main__":
 For quick command
 ```python
 python main.py --image_path "assets/1.jpg" --prompt "Cat" --save_path "result.png"
+```
+
+
+## Cite
+If you find InstantStyle useful for your research and applications, please cite us using this BibTeX:
+
+```bibtex
+@article{huang2025artcrafter,
+  title={Artcrafter: Text-image aligning style transfer via embedding reframing},
+  author={Huang, Nisha and Huang, Kaer and Pu, Yifan and Wang, Jiangshan and Guo, Jie and Yan, Yiqiang and Li, Xiu and Lee, Tong-Yee},
+  journal={arXiv preprint arXiv:2501.02064},
+  year={2025}
+}
+
 ```
