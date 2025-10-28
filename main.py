@@ -1,8 +1,8 @@
 import argparse
 import torch
 from diffusers import StableDiffusionPipeline, DDIMScheduler, AutoencoderKL
-from PIL import Image, ImageDraw, ImageFont
-from ip_adapter import IPAdapterPlus,IPAdapter
+from PIL import Image
+from adapter import IPAdapterPlus
 
 base_model_path = "SG161222/Realistic_Vision_V4.0_noVAE"
 vae_model_path = "stabilityai/sd-vae-ft-mse"
@@ -43,9 +43,8 @@ def main(args):
         safety_checker=None
     )
 
-    # ip_ckpt = args.ip_ckpt
+
     ip_model = IPAdapterPlus(pipe, image_encoder_path, ip_ckpt, device, num_tokens=16)
-    # ip_model = IPAdapter(pipe, image_encoder_path, ip_ckpt, device, num_tokens=16)
 
     image = Image.open(args.image_path)
     image = image.resize((512, 512))

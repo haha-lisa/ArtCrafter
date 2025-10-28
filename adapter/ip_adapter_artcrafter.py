@@ -202,15 +202,10 @@ class IPAdapter:
                 do_classifier_free_guidance=True,
                 negative_prompt=negative_prompt,
             )
-            # prompt_embeds = torch.cat([prompt_embeds_, image_prompt_embeds], dim=1)
-            # negative_prompt_embeds = torch.cat([negative_prompt_embeds_, uncond_image_prompt_embeds], dim=1)
 
-
-
-            # 假设embedding_dim是嵌入的维度
             embedding_dim = 768
 
-            # 初始化线性变换层
+
             query_layer = nn.Linear(embedding_dim, embedding_dim)
             key_layer = nn.Linear(embedding_dim, embedding_dim)
             value_layer = nn.Linear(embedding_dim, embedding_dim)
