@@ -1,5 +1,5 @@
 <div align="center">
-<h1>ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing</h1>
+<h1>ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing (TVCG 2026)</h1>
 
 [**Nisha Huang**](https://scholar.google.com/citations?user=wTmPkSsAAAAJ&hl=en) · [**Kaer Huang**](https://carlhuangnuc.github.io/) · [**Yifan Pu**](https://scholar.google.com/citations?user=oM9rnYQAAAAJ&hl=en&authuser=2) · [**Jiangshan Wang**](https://github.com/wangjiangshan0725) · [**Jie Guo**](https://scholar.google.com.hk/citations?user=hqLytuEAAAAJ&hl=zh-CN) · [**Yiqiang Yan**](https://scholar.google.com/citations?user=p6q5mOkAAAAJ&hl=en)· [**Xiu Li**](https://scholar.google.com/citations?user=Xrh1OIUAAAAJ)<sup>*</sup>· [**Tong-Yee Lee**](http://graphics.csie.ncku.edu.tw/Tony/tony.htm)<sup>\*</sup>
 
