@@ -7,7 +7,7 @@ Tsinghua University, Pengcheng Laboratory, Lenovo, National Cheng Kung Universit
 
 <sup>*</sup>Co-corresponding authors
 
-<a href='https://arxiv.org/abs/2501.02064'><img src='https://img.shields.io/badge/Arxiv-Paper-red'></a>
+<a href='https://ieeexplore.ieee.org/document/11313674'><img src='https://img.shields.io/badge/IEEE-Paper-blue'></a>
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-model-red)](https://huggingface.co/lisalisalisa/artcrafter)
 
 
