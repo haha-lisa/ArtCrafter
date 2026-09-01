@@ -125,11 +125,16 @@ python main.py --image_path "assets/1.jpg" --prompt "Cat" --save_path "result.pn
 If you find InstantStyle useful for your research and applications, please cite us using this BibTeX:
 
 ```bibtex
-@article{huang2025artcrafter,
-  title={Artcrafter: Text-image aligning style transfer via embedding reframing},
+@ARTICLE{11313674,
   author={Huang, Nisha and Huang, Kaer and Pu, Yifan and Wang, Jiangshan and Guo, Jie and Yan, Yiqiang and Li, Xiu and Lee, Tong-Yee},
-  journal={arXiv preprint arXiv:2501.02064},
-  year={2025}
+  journal={IEEE Transactions on Visualization and Computer Graphics}, 
+  title={ArtCrafter: Text-Image Aligning Artistic Attribute Transfer via Embedding Reframing}, 
+  year={2026},
+  volume={32},
+  number={7},
+  pages={4959-4972},
+  doi={10.1109/TVCG.2025.3647628}
 }
+
 
 ```
